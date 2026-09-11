@@ -1,0 +1,60 @@
+VIEW2 THREADS=4 RUN=1
+[mandelbrot serial]:		[438.343] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot thread]:		[133.414] ms
+Wrote image file mandelbrot-thread.ppm
+				(3.29x speedup from 4 threads)
+VIEW2 THREADS=4 RUN=2
+[mandelbrot serial]:		[433.054] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot thread]:		[125.684] ms
+Wrote image file mandelbrot-thread.ppm
+				(3.45x speedup from 4 threads)
+VIEW2 THREADS=4 RUN=3
+[mandelbrot serial]:		[431.679] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot thread]:		[123.347] ms
+Wrote image file mandelbrot-thread.ppm
+				(3.50x speedup from 4 threads)
+VIEW2 THREADS=4 RUN=4
+[mandelbrot serial]:		[420.441] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot thread]:		[119.763] ms
+Wrote image file mandelbrot-thread.ppm
+				(3.51x speedup from 4 threads)
+VIEW2 THREADS=4 RUN=5
+[mandelbrot serial]:		[412.621] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot thread]:		[137.176] ms
+Wrote image file mandelbrot-thread.ppm
+				(3.01x speedup from 4 threads)
+VIEW2 THREADS=8 RUN=1
+[mandelbrot serial]:		[433.256] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot thread]:		[129.165] ms
+Wrote image file mandelbrot-thread.ppm
+				(3.35x speedup from 8 threads)
+VIEW2 THREADS=8 RUN=2
+[mandelbrot serial]:		[419.218] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot thread]:		[129.801] ms
+Wrote image file mandelbrot-thread.ppm
+				(3.23x speedup from 8 threads)
+VIEW2 THREADS=8 RUN=3
+[mandelbrot serial]:		[425.313] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot thread]:		[133.901] ms
+Wrote image file mandelbrot-thread.ppm
+				(3.18x speedup from 8 threads)
+VIEW2 THREADS=8 RUN=4
+[mandelbrot serial]:		[421.341] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot thread]:		[140.728] ms
+Wrote image file mandelbrot-thread.ppm
+				(2.99x speedup from 8 threads)
+VIEW2 THREADS=8 RUN=5
+[mandelbrot serial]:		[441.314] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot thread]:		[137.589] ms
+Wrote image file mandelbrot-thread.ppm
+				(3.21x speedup from 8 threads)
