@@ -1,0 +1,30 @@
+========== RUN 1 ==========
+[sqrt serial]:		[2963.395] ms
+[sqrt ispc]:		[470.924] ms
+[sqrt task ispc]:	[147.461] ms
+				(6.29x speedup from ISPC)
+				(20.10x speedup from task ISPC)
+========== RUN 2 ==========
+[sqrt serial]:		[2967.224] ms
+[sqrt ispc]:		[481.101] ms
+[sqrt task ispc]:	[156.871] ms
+				(6.17x speedup from ISPC)
+				(18.92x speedup from task ISPC)
+========== RUN 3 ==========
+[sqrt serial]:		[2954.780] ms
+[sqrt ispc]:		[466.798] ms
+[sqrt task ispc]:	[154.005] ms
+				(6.33x speedup from ISPC)
+				(19.19x speedup from task ISPC)
+========== RUN 4 ==========
+[sqrt serial]:		[2898.466] ms
+[sqrt ispc]:		[486.111] ms
+[sqrt task ispc]:	[161.262] ms
+				(5.96x speedup from ISPC)
+				(17.97x speedup from task ISPC)
+========== RUN 5 ==========
+[sqrt serial]:		[2882.543] ms
+[sqrt ispc]:		[457.261] ms
+[sqrt task ispc]:	[145.697] ms
+				(6.30x speedup from ISPC)
+				(19.78x speedup from task ISPC)

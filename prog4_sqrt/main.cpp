@@ -27,10 +27,9 @@ int main() {
     float* output = new float[N];
     float* gold = new float[N];
 
-   for (unsigned int i = 0; i < N; i++)
+    for (unsigned int i = 0; i < N; i++)
     {
-      values[i] = .001f +
-                  2.998f * static_cast<float>(rand()) / RAND_MAX;
+        values[i] = 2.999f;
     }
     
     // generate a gold version to check results
