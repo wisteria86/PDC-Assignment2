@@ -1,0 +1,56 @@
+========== VECTOR WIDTH 2 ==========
+[1;31mCLAMPED EXPONENT[0m (required) 
+Results matched with answer!
+****************** Printing Vector Unit Statistics *******************
+Vector Width:              2
+Total Vector Instructions: 162515
+Vector Utilization:        87.6%
+Utilized Vector Lanes:     284622
+Total Vector Lanes:        325030
+************************ Result Verification *************************
+Passed!!!
+
+[1;31mARRAY SUM[0m (bonus) 
+Passed!!!
+========== VECTOR WIDTH 4 ==========
+[1;31mCLAMPED EXPONENT[0m (required) 
+Results matched with answer!
+****************** Printing Vector Unit Statistics *******************
+Vector Width:              4
+Total Vector Instructions: 94571
+Vector Utilization:        82.3%
+Utilized Vector Lanes:     311252
+Total Vector Lanes:        378284
+************************ Result Verification *************************
+Passed!!!
+
+[1;31mARRAY SUM[0m (bonus) 
+Passed!!!
+========== VECTOR WIDTH 8 ==========
+[1;31mCLAMPED EXPONENT[0m (required) 
+Results matched with answer!
+****************** Printing Vector Unit Statistics *******************
+Vector Width:              8
+Total Vector Instructions: 51627
+Vector Utilization:        79.6%
+Utilized Vector Lanes:     328624
+Total Vector Lanes:        413016
+************************ Result Verification *************************
+Passed!!!
+
+[1;31mARRAY SUM[0m (bonus) 
+Passed!!!
+========== VECTOR WIDTH 16 ==========
+[1;31mCLAMPED EXPONENT[0m (required) 
+Results matched with answer!
+****************** Printing Vector Unit Statistics *******************
+Vector Width:              16
+Total Vector Instructions: 26967
+Vector Utilization:        78.3%
+Utilized Vector Lanes:     337864
+Total Vector Lanes:        431472
+************************ Result Verification *************************
+Passed!!!
+
+[1;31mARRAY SUM[0m (bonus) 
+Passed!!!

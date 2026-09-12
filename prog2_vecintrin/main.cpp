@@ -242,14 +242,46 @@ void clampedExpSerial(float* values, int* exponents, float* output, int N) {
 
 void clampedExpVector(float* values, int* exponents, float* output, int N) {
 
-  //
-  // CS149 STUDENTS TODO: Implement your vectorized version of
-  // clampedExpSerial() here.
-  //
-  // Your solution should work for any value of
-  // N and VECTOR_WIDTH, not just when VECTOR_WIDTH divides N
-  //
-  
+  __cs149_vec_float x;
+  __cs149_vec_float result;
+  __cs149_vec_int exp;
+
+  __cs149_vec_int zero = _cs149_vset_int(0);
+  __cs149_vec_int one = _cs149_vset_int(1);
+  __cs149_vec_float clampValue = _cs149_vset_float(9.999999f);
+
+  for (int i = 0; i < N; i += VECTOR_WIDTH) {
+
+    // Handles the final partial vector
+    int lanes = std::min(VECTOR_WIDTH, N - i);
+    __cs149_mask active = _cs149_init_ones(lanes);
+
+    _cs149_vload_float(x, values + i, active);
+    _cs149_vload_int(exp, exponents + i, active);
+
+    // x^0 = 1
+    _cs149_vset_float(result, 1.f, active);
+
+    // Lanes with exponent > 0 still have work to do.
+    __cs149_mask work = _cs149_init_ones(0);
+    _cs149_vgt_int(work, exp, zero, active);
+
+    while (_cs149_cntbits(work) > 0) {
+
+      _cs149_vmult_float(result, result, x, work);
+      _cs149_vsub_int(exp, exp, one, work);
+
+      // Remove lanes that have completed their exponent.
+      _cs149_vgt_int(work, exp, zero, active);
+    }
+
+    // Clamp results greater than 9.999999.
+    __cs149_mask clampMask = _cs149_init_ones(0);
+    _cs149_vgt_float(clampMask, result, clampValue, active);
+    _cs149_vset_float(result, 9.999999f, clampMask);
+
+    _cs149_vstore_float(output + i, result, active);
+  }
 }
 
 // returns the sum of all elements in values
@@ -266,15 +298,28 @@ float arraySumSerial(float* values, int N) {
 // You can assume N is a multiple of VECTOR_WIDTH
 // You can assume VECTOR_WIDTH is a power of 2
 float arraySumVector(float* values, int N) {
-  
-  //
-  // CS149 STUDENTS TODO: Implement your vectorized version of arraySumSerial here
-  //
-  
-  for (int i=0; i<N; i+=VECTOR_WIDTH) {
 
+  __cs149_mask all = _cs149_init_ones();
+
+  __cs149_vec_float sum = _cs149_vset_float(0.f);
+  __cs149_vec_float valuesVec;
+
+  // First accumulate VECTOR_WIDTH independent partial sums.
+  for (int i = 0; i < N; i += VECTOR_WIDTH) {
+
+    _cs149_vload_float(valuesVec, values + i, all);
+    _cs149_vadd_float(sum, sum, valuesVec, all);
   }
 
-  return 0.0;
+  // Reduce the lanes down to one value.
+  __cs149_vec_float temp;
+
+  for (int width = VECTOR_WIDTH; width > 1; width /= 2) {
+
+    _cs149_hadd_float(temp, sum);
+    _cs149_interleave_float(sum, temp);
+  }
+
+  return sum.value[0];
 }
 
