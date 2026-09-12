@@ -29,7 +29,10 @@ int main() {
 
     for (unsigned int i = 0; i < N; i++)
     {
-        values[i] = 2.999f;
+        if (i % 8 == 0)
+            values[i] = 2.999f;
+        else
+            values[i] = 1.0f;
     }
     
     // generate a gold version to check results
