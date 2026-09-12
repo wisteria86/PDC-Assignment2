@@ -63,7 +63,7 @@ using namespace ispc;
 void usage(const char* progname) {
     printf("Usage: %s [options]\n", progname);
     printf("Program Options:\n");
-    printf("  -t  --tasks        Run ISPC code implementation with tasks\n");
+    printf("  -t  --tasks <N>    Run ISPC implementation with N tasks\n");
     printf("  -v  --view <INT>   Use specified view settings\n");
     printf("  -?  --help         This message\n");
 }
@@ -81,22 +81,29 @@ int main(int argc, char** argv) {
     float y1 = 1;
 
     bool useTasks = false;
+    int numTasks = 0;
 
     // parse commandline options ////////////////////////////////////////////
     int opt;
     static struct option long_options[] = {
-        {"tasks", 0, 0, 't'},
+        {"tasks", 1, 0, 't'},
         {"view",  1, 0, 'v'},
         {"help",  0, 0, '?'},
         {0 ,0, 0, 0}
     };
 
-    while ((opt = getopt_long(argc, argv, "tv:?", long_options, NULL)) != EOF) {
+    while ((opt = getopt_long(argc, argv, "t:v:?", long_options, NULL)) != EOF) {
 
         switch (opt) {
         case 't':
-            useTasks = true;
-            break;
+          useTasks = true;
+          numTasks = atoi(optarg);
+
+          if (numTasks <= 0) {
+              fprintf(stderr, "Number of tasks must be greater than zero\n");
+              return 1;
+          }
+          break;
         case 'v':
         {
             int viewIndex = atoi(optarg);
@@ -183,7 +190,7 @@ int main(int argc, char** argv) {
         //
         for (int i = 0; i < 3; ++i) {
             double startTime = CycleTimer::currentSeconds();
-            mandelbrot_ispc_withtasks(x0, y0, x1, y1, width, height, maxIterations, output_ispc_tasks);
+            mandelbrot_ispc_withtasks(x0, y0, x1, y1,width, height,maxIterations,numTasks,output_ispc_tasks);
             double endTime = CycleTimer::currentSeconds();
             minTaskISPC = std::min(minTaskISPC, endTime - startTime);
         }
