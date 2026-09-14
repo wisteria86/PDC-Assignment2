@@ -1,0 +1,20 @@
+========== SERIAL RUN 1 ==========
+Reading data.dat...
+Running K-means with: M=1000000, N=100, K=3, epsilon=0.100000
+[Total Time]: 73498.654 ms
+========== SERIAL RUN 2 ==========
+Reading data.dat...
+Running K-means with: M=1000000, N=100, K=3, epsilon=0.100000
+[Total Time]: 65080.663 ms
+========== SERIAL RUN 3 ==========
+Reading data.dat...
+Running K-means with: M=1000000, N=100, K=3, epsilon=0.100000
+[Total Time]: 55251.294 ms
+========== SERIAL RUN 4 ==========
+Reading data.dat...
+Running K-means with: M=1000000, N=100, K=3, epsilon=0.100000
+[Total Time]: 55235.170 ms
+========== SERIAL RUN 5 ==========
+Reading data.dat...
+Running K-means with: M=1000000, N=100, K=3, epsilon=0.100000
+[Total Time]: 55212.556 ms
