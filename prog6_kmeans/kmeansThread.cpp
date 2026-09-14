@@ -68,19 +68,25 @@ void computeAssignments(WorkerArgs *const args) {
 
   for (int m = args->start; m < args->end; m++) {
 
-    double minDist = 1e30;
+    double minDistSquared = 1e30;
     int bestAssignment = -1;
+
+    double *point = &args->data[m * args->N];
 
     for (int k = 0; k < args->K; k++) {
 
-      double d = dist(
-          &args->data[m * args->N],
-          &args->clusterCentroids[k * args->N],
-          args->N
-      );
+      double *centroid =
+          &args->clusterCentroids[k * args->N];
 
-      if (d < minDist) {
-        minDist = d;
+      double distSquared = 0.0;
+
+      for (int n = 0; n < args->N; n++) {
+        double diff = point[n] - centroid[n];
+        distSquared += diff * diff;
+      }
+
+      if (distSquared < minDistSquared) {
+        minDistSquared = distSquared;
         bestAssignment = k;
       }
     }

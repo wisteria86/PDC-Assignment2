@@ -1,0 +1,20 @@
+========== OPTIMIZED RUN 1 ==========
+Reading data.dat...
+Running K-means with: M=1000000, N=100, K=3, epsilon=0.100000
+[Total Time]: 28065.259 ms
+========== OPTIMIZED RUN 2 ==========
+Reading data.dat...
+Running K-means with: M=1000000, N=100, K=3, epsilon=0.100000
+[Total Time]: 28070.454 ms
+========== OPTIMIZED RUN 3 ==========
+Reading data.dat...
+Running K-means with: M=1000000, N=100, K=3, epsilon=0.100000
+[Total Time]: 27951.619 ms
+========== OPTIMIZED RUN 4 ==========
+Reading data.dat...
+Running K-means with: M=1000000, N=100, K=3, epsilon=0.100000
+[Total Time]: 27954.146 ms
+========== OPTIMIZED RUN 5 ==========
+Reading data.dat...
+Running K-means with: M=1000000, N=100, K=3, epsilon=0.100000
+[Total Time]: 28009.645 ms
