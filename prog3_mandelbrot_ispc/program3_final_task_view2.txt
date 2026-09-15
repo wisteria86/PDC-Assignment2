@@ -1,0 +1,45 @@
+========== FINAL VIEW 2 TASK RUN 1 ==========
+[mandelbrot serial]:		[249.209] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot ispc]:		[63.961] ms
+Wrote image file mandelbrot-ispc.ppm
+[mandelbrot multicore ispc]:	[21.112] ms
+Wrote image file mandelbrot-task-ispc.ppm
+				(3.90x speedup from ISPC)
+				(11.80x speedup from task ISPC)
+========== FINAL VIEW 2 TASK RUN 2 ==========
+[mandelbrot serial]:		[212.512] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot ispc]:		[59.069] ms
+Wrote image file mandelbrot-ispc.ppm
+[mandelbrot multicore ispc]:	[20.833] ms
+Wrote image file mandelbrot-task-ispc.ppm
+				(3.60x speedup from ISPC)
+				(10.20x speedup from task ISPC)
+========== FINAL VIEW 2 TASK RUN 3 ==========
+[mandelbrot serial]:		[202.467] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot ispc]:		[46.230] ms
+Wrote image file mandelbrot-ispc.ppm
+[mandelbrot multicore ispc]:	[15.172] ms
+Wrote image file mandelbrot-task-ispc.ppm
+				(4.38x speedup from ISPC)
+				(13.35x speedup from task ISPC)
+========== FINAL VIEW 2 TASK RUN 4 ==========
+[mandelbrot serial]:		[212.125] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot ispc]:		[55.683] ms
+Wrote image file mandelbrot-ispc.ppm
+[mandelbrot multicore ispc]:	[16.979] ms
+Wrote image file mandelbrot-task-ispc.ppm
+				(3.81x speedup from ISPC)
+				(12.49x speedup from task ISPC)
+========== FINAL VIEW 2 TASK RUN 5 ==========
+[mandelbrot serial]:		[201.751] ms
+Wrote image file mandelbrot-serial.ppm
+[mandelbrot ispc]:		[46.216] ms
+Wrote image file mandelbrot-ispc.ppm
+[mandelbrot multicore ispc]:	[15.943] ms
+Wrote image file mandelbrot-task-ispc.ppm
+				(4.37x speedup from ISPC)
+				(12.65x speedup from task ISPC)
